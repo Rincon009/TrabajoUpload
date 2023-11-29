@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Investigación</title>
+  <link rel="stylesheet" href="Css.css">
+  <script src="Js.js"></script>
+</head>
+
+<body>
+  <button id="boton" onclick="mostrarOcultarImagen()">Mostrar imagen</button>
+  <div id="overlay">
+    <img id="imagen"
+      src="https://imagenes.20minutos.es/files/image_1920_1080/uploads/imagenes/2021/04/08/el-mitico-fondo-de-pantalla-de-windows-xp-bliss.jpeg"
+      alt="Imagen">
+  </div>
+
+  <h1>Investigación</h1>
+  <div id="formButtons">
+    <button id="button" onclick="mostrarFormulario('bandaForm')">Añadir Sujeto</button>
+  
+    <button onclick="mostrarInfoSujetos()">Sujetos</button>
+
+
+  </div>
+
+  <div id="formularios">
+    <form id="bandaForm" class="formulario">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" required><br><br>
+
+      <label for="tipo">Tipo:</label>
+      <select id="tipo" onchange="cambiarTipo()" required>
+        <option value="vivo">Vivo</option>
+        <option value="cargado">Cargado</option>
+      </select><br><br>
+
+      <label for="ubicacion">Donde Vive:</label>
+      <input type="text" id="DondeVive" required><br><br>
+
+      <label for="descargado-desde">Desde cuando fue descargado:</label>
+      <input type="date" id="DescargadoDesde" disabled><br><br>
+
+      <label for="culpabilidad">Posible Culpabilidad:</label>
+      <select id="Culpabilidad" required>
+        <option value="posible-cooperador">Posible Cooperador</option>
+        <option value="cooperador">Cooperador</option>
+        <option value="delincuente">Delincuente</option>
+      </select><br><br>
+
+      <label for="imagen-url">URL de la Imagen:</label>
+      <input type="img" id="imagen-url"><br><br>
+
+      <label for="comentarios">Comentarios:</label>
+      <textarea id="Comentario"></textarea><br><br>
+
+      <button type="button" id="NuevoSujeto" onclick="crearNuevoSujeto()">Guardar Sujeto</button>
+    </form>
+
+
+    <form id="editarForm" class="formulario">
+    
+      <select id="select-nombre" onchange="cargarDatosSeleccionados()">
+      </select>
+
+      <label for="nombreEdit">Nombre:</label>
+      <input type="text" id="nombreEdit" required><br><br>
+
+      <label for="tipoedit">Tipo:</label>
+      <select id="tipoedit" onchange="cambiarTipoEdit()" required>
+        <option value="vivo">Vivo</option>
+        <option value="cargado">Cargado</option>
+      </select><br><br>
+
+
+      <label for="ubicacion">Donde Vive:</label>
+      <input type="text" id="DondeViveEdit" required><br><br>
+
+      <label for="descargado-desde">Desde cuando fue descargado:</label>
+      <input type="date" id="DescargadoDesdeEdit" disabled><br><br>
+
+      <label for="culpabilidad">Posible Culpabilidad:</label>
+      <select id="CulpabilidadEdit" required>
+        <option value="posible-cooperador">Posible Cooperador</option>
+        <option value="cooperador">Cooperador</option>
+        <option value="delincuente">Delincuente</option>
+      </select><br><br>
+
+      <label for="imagen-url">URL de la Imagen:</label>
+      <input type="img" id="imagen-urlEdit"><br><br>
+
+      <label for="comentarios">Comentarios:</label>
+      <textarea id="ComentarioEdit"></textarea><br><br>
+
+      <button type="button" id="SujetoEditado" onclick="guardarEdicion()">Guardar</button>
+      <button type="button" id="NuevoSujeto" onclick="eliminarSujeto() ">Eliminar Sujeto</button>
+    </form>
+
+
+
+    <div id="infoSujetos"></div>
+  </div>
+
+</body>
+
+</html>
